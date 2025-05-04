@@ -19,10 +19,14 @@ function playRound(humanChoice, computerChoice) {
   else if (fixedHumanChoice === "rock") {
     //determine if human won or lost
     if (computerChoice === "paper") {
+      //increment score
+      computerScore++;
       return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
     }
     //you win because you didn't tie, and paper was not true
     else {
+      //increment score
+      humanScore++;
       return (
         "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
       );
@@ -33,10 +37,14 @@ function playRound(humanChoice, computerChoice) {
   else if (fixedHumanChoice === "paper") {
     //determine if you lost
     if (computerChoice === "scissor") {
+      //increment score
+      computerScore++;
       return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
     }
     //you win because you didn't tie, and scissors was not true
     else {
+      //increment score
+      humanScore++;
       return (
         "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
       );
@@ -47,10 +55,14 @@ function playRound(humanChoice, computerChoice) {
   else if (fixedHumanChoice === "scissor") {
     //determine if you lost
     if (computerChoice === "rock") {
+      //increment score
+      computerScore++;
       return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
     }
     //you win because you didn't tie, and rock was not true
     else {
+      //increment score
+      humanScore++;
       return (
         "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
       );
@@ -64,6 +76,7 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 console.log(playRound(humanSelection, computerSelection));
+console.log("Human: " + humanScore + " Computer: " + computerScore);
 
 // write a function that gets computer getComputerChoice
 function getComputerChoice() {
