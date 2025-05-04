@@ -6,7 +6,7 @@ console.log("Javascript Test");
 function getComputerChoice() {
   // inside the function
 
-  // create a variable for the computer choice
+  // create a variable for the choice, and math value to determine which one to use
   let choice, mathVal;
 
   // use math random to generate a number0-1
