@@ -9,13 +9,61 @@ function playRound(humanChoice, computerChoice) {
   let fixedHumanChoice = humanChoice.toLowerCase();
   console.log("This is fixed case human choice :" + fixedHumanChoice);
   // output a string that indicates who won the round
+
+  // if they choose the same thing, return you tied
+  if (fixedHumanChoice === computerChoice) {
+    return "You both chose " + fixedHumanChoice + "! You Tied!";
+  }
+
+  //if human chose rock
+  else if (fixedHumanChoice === "rock") {
+    //determine if human won or lost
+    if (computerChoice === "paper") {
+      return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
+    }
+    //you win because you didn't tie, and paper was not true
+    else {
+      return (
+        "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
+      );
+    }
+  }
+
+  //if human chose paper
+  else if (fixedHumanChoice === "paper") {
+    //determine if you lost
+    if (computerChoice === "scissor") {
+      return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
+    }
+    //you win because you didn't tie, and scissors was not true
+    else {
+      return (
+        "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
+      );
+    }
+  }
+
+  //if human chose scissor
+  else if (fixedHumanChoice === "scissor") {
+    //determine if you lost
+    if (computerChoice === "rock") {
+      return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
+    }
+    //you win because you didn't tie, and rock was not true
+    else {
+      return (
+        "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
+      );
+    }
+  }
+
   // increment humanscore or computerscore variables based on who won that round
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+console.log(playRound(humanSelection, computerSelection));
 
 // write a function that gets computer getComputerChoice
 function getComputerChoice() {
@@ -52,5 +100,3 @@ function getHumanChoice() {
   // return their choice
   return choice;
 }
-
-console.log(getHumanChoice());
