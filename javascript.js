@@ -1,5 +1,3 @@
-console.log("Javascript Test");
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -7,7 +5,9 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
   // make human choice case insenitive, so caps or lowercase works
   let fixedHumanChoice = humanChoice.toLowerCase();
-  console.log("This is fixed case human choice :" + fixedHumanChoice);
+
+  //test case sensitivity
+  //   console.log("This is fixed case human choice :" + fixedHumanChoice);
   // output a string that indicates who won the round
 
   // if they choose the same thing, return you tied
@@ -72,7 +72,6 @@ function getComputerChoice() {
 
   // use math random to generate a number0-1
   mathVal = Math.random();
-  console.log(mathVal);
 
   // if it is .0-.33 set computer choice to "rock"
   if (mathVal <= 0.33) {
@@ -86,10 +85,13 @@ function getComputerChoice() {
   else if (mathVal > 0.66) {
     choice = "scissor";
   }
+
+  //logs answer for testing
+  console.log("getComputerChoice output: " + choice);
+
   // return string
   return choice;
 }
-console.log(getComputerChoice());
 
 //create a function to getHumanChoice
 function getHumanChoice() {
@@ -97,6 +99,10 @@ function getHumanChoice() {
   let choice;
   // ask the user to enter rock paper or scissor
   choice = prompt("Enter your choice - rock, paper, or scissor.");
+
+  //logs answer for testing
+  console.log("getHumanChoice output: " + choice);
+
   // return their choice
   return choice;
 }
