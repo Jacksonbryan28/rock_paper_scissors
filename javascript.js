@@ -1,8 +1,9 @@
 console.log("Javascript Test");
 
-// psuedo code
-// write a function that gets computer getComputerChoic
+let humanScore = 0;
+let computerScore = 0;
 
+// write a function that gets computer getComputerChoice
 function getComputerChoice() {
   // create a variable for the choice, and math value to determine which one to use
   let choice, mathVal;
