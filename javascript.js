@@ -20,13 +20,13 @@ function playRound(humanChoice, computerChoice) {
     //determine if human won or lost
     if (computerChoice === "paper") {
       //increment score
-      computerScore++;
+      ++computerScore;
       return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
     }
     //you win because you didn't tie, and paper was not true
     else {
       //increment score
-      humanScore++;
+      ++humanScore;
       return (
         "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
       );
@@ -38,13 +38,13 @@ function playRound(humanChoice, computerChoice) {
     //determine if you lost
     if (computerChoice === "scissor") {
       //increment score
-      computerScore++;
+      ++computerScore;
       return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
     }
     //you win because you didn't tie, and scissors was not true
     else {
       //increment score
-      humanScore++;
+      ++humanScore;
       return (
         "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
       );
@@ -56,13 +56,13 @@ function playRound(humanChoice, computerChoice) {
     //determine if you lost
     if (computerChoice === "rock") {
       //increment score
-      computerScore++;
+      ++computerScore;
       return "You lost! " + computerChoice + " beats " + fixedHumanChoice;
     }
     //you win because you didn't tie, and rock was not true
     else {
       //increment score
-      humanScore++;
+      ++humanScore;
       return (
         "Congrats you won! " + fixedHumanChoice + " beats " + computerChoice
       );
