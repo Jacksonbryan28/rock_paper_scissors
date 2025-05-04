@@ -1,6 +1,10 @@
 let humanScore = 0;
 let computerScore = 0;
 
+//cut into play game function
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
+
 //write a function that takes the input of computer and human to run a round.
 function playRound(humanChoice, computerChoice) {
   // make human choice case insenitive, so caps or lowercase works
@@ -72,11 +76,9 @@ function playRound(humanChoice, computerChoice) {
   // increment humanscore or computerscore variables based on who won that round
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-console.log(playRound(humanSelection, computerSelection));
-console.log("Human: " + humanScore + " Computer: " + computerScore);
+// Moved into play game function
+// console.log(playRound(humanSelection, computerSelection));
+// console.log("Human: " + humanScore + " Computer: " + computerScore);
 
 // write a function that gets computer getComputerChoice
 function getComputerChoice() {
@@ -119,3 +121,25 @@ function getHumanChoice() {
   // return their choice
   return choice;
 }
+
+//Play a full 5 round game
+function playGame() {
+  //make a for loop that calls play round 5 times
+  for (let i = 1; i < 6; i++) {
+    //output the score and result after each round
+    console.log("------ Round " + i + " -----");
+
+    //calls the functions each round to get user and computer choice
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    //calls the play round function each round
+    console.log(playRound(humanSelection, computerSelection));
+
+    //prints the score of the
+    console.log("Human: " + humanScore + " Computer: " + computerScore);
+  }
+}
+
+//Calls playGame function to play
+console.log(playGame());
