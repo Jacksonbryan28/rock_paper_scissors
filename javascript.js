@@ -3,6 +3,20 @@ console.log("Javascript Test");
 let humanScore = 0;
 let computerScore = 0;
 
+//write a function that takes the input of computer and human to run a round.
+function playRound(humanChoice, computerChoice) {
+  // make human choice case insenitive, so caps or lowercase works
+  let fixedHumanChoice = humanChoice.toLowerCase();
+  console.log("This is fixed case human choice :" + fixedHumanChoice);
+  // output a string that indicates who won the round
+  // increment humanscore or computerscore variables based on who won that round
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
 // write a function that gets computer getComputerChoice
 function getComputerChoice() {
   // create a variable for the choice, and math value to determine which one to use
