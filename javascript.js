@@ -4,14 +4,13 @@ console.log("Javascript Test");
 // write a function that gets computer getComputerChoic
 
 function getComputerChoice() {
-  // inside the function
-
   // create a variable for the choice, and math value to determine which one to use
   let choice, mathVal;
 
   // use math random to generate a number0-1
   mathVal = Math.random();
   console.log(mathVal);
+
   // if it is .0-.33 set computer choice to "rock"
   if (mathVal <= 0.33) {
     choice = "rock";
@@ -27,5 +26,16 @@ function getComputerChoice() {
   // return string
   return choice;
 }
-
 console.log(getComputerChoice());
+
+//create a function to getHumanChoice
+function getHumanChoice() {
+  // create a variable to save their choice
+  let choice;
+  // ask the user to enter rock paper or scissor
+  choice = prompt("Enter your choice - rock, paper, or scissor.");
+  // return their choice
+  return choice;
+}
+
+console.log(getHumanChoice());
