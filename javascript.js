@@ -1,18 +1,10 @@
 let humanScore = 0;
 let computerScore = 0;
 
-//cut into play game function
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
-
 //write a function that takes the input of computer and human to run a round.
 function playRound(humanChoice, computerChoice) {
   // make human choice case insenitive, so caps or lowercase works
   let fixedHumanChoice = humanChoice.toLowerCase();
-
-  //test case sensitivity
-  //   console.log("This is fixed case human choice :" + fixedHumanChoice);
-  // output a string that indicates who won the round
 
   // if they choose the same thing, return you tied
   if (fixedHumanChoice === computerChoice) {
@@ -76,10 +68,6 @@ function playRound(humanChoice, computerChoice) {
   // increment humanscore or computerscore variables based on who won that round
 }
 
-// Moved into play game function
-// console.log(playRound(humanSelection, computerSelection));
-// console.log("Human: " + humanScore + " Computer: " + computerScore);
-
 // write a function that gets computer getComputerChoice
 function getComputerChoice() {
   // create a variable for the choice, and math value to determine which one to use
@@ -141,5 +129,4 @@ function playGame() {
   }
 }
 
-//Calls playGame function to play
-console.log(playGame());
+playGame();
