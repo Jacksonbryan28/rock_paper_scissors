@@ -3,7 +3,7 @@ let computerScore = 0;
 
 //write a function that takes the input of computer and human to run a round.
 function playRound(humanChoice, computerChoice) {
-  // make human choice case insenitive, so caps or lowercase works
+  // make human choice case insensitive, so caps or lowercase works
   let fixedHumanChoice = humanChoice.toLowerCase();
 
   // if they choose the same thing, return you tied
@@ -135,6 +135,7 @@ function playGame() {
 
 //Adding JS for all buttons
 const btn = document.querySelectorAll("button");
+const div = document.querySelector("div");
 //Create event listener for each button
 btn.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -142,8 +143,13 @@ btn.forEach((btn) => {
     console.log(btn.textContent);
     const humanSelection = btn.textContent;
     const computerSelection = getComputerChoice();
+    let roundResult = "";
     //run playRound when a button is clicked
     //playRound should be input by what button was selected
-    console.log(playRound(humanSelection, computerSelection));
+    roundResult = playRound(humanSelection, computerSelection);
+    div.textContent = `Result:
+    Human selected: ${humanSelection}
+    Computer selected: ${computerSelection} 
+    Round result: ${roundResult}`;
   });
 });
