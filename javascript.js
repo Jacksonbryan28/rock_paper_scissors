@@ -120,8 +120,8 @@ function playGame() {
   // console.log("------ Round " + i + " -----");
 
   //calls the functions each round to get user and computer choice
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+  // const humanSelection = getHumanChoice();
+  // const computerSelection = getComputerChoice();
 
   //calls the play round function each round
   console.log(playRound(humanSelection, computerSelection));
@@ -131,7 +131,7 @@ function playGame() {
   // }
 }
 
-playGame();
+// playGame();
 
 //Adding JS for all buttons
 const btn = document.querySelectorAll("button");
@@ -140,9 +140,10 @@ btn.forEach((btn) => {
   btn.addEventListener("click", () => {
     // alert("button clicked");
     console.log(btn.textContent);
-    console.log(playRound(btn.textContent, getComputerChoice()));
+    const humanSelection = btn.textContent;
+    const computerSelection = getComputerChoice();
+    //run playRound when a button is clicked
+    //playRound should be input by what button was selected
+    console.log(playRound(humanSelection, computerSelection));
   });
 });
-
-//run playRound when a button is clicked
-//playRound should be input by what button was selected
