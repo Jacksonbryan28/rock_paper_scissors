@@ -113,20 +113,36 @@ function getHumanChoice() {
 //Play a full 5 round game
 function playGame() {
   //make a for loop that calls play round 5 times
-  for (let i = 1; i < 6; i++) {
-    //output the score and result after each round
-    console.log("------ Round " + i + " -----");
 
-    //calls the functions each round to get user and computer choice
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+  //commenting out 5 rounds so we just play one
+  // for (let i = 1; i < 6; i++) {
+  //output the score and result after each round
+  // console.log("------ Round " + i + " -----");
 
-    //calls the play round function each round
-    console.log(playRound(humanSelection, computerSelection));
+  //calls the functions each round to get user and computer choice
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
 
-    //prints the score of the
-    console.log("Human: " + humanScore + " Computer: " + computerScore);
-  }
+  //calls the play round function each round
+  console.log(playRound(humanSelection, computerSelection));
+
+  //prints the score of the
+  console.log("Human: " + humanScore + " Computer: " + computerScore);
+  // }
 }
 
 playGame();
+
+//Adding JS for all buttons
+const btn = document.querySelectorAll("button");
+//Create event listener for each button
+btn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // alert("button clicked");
+    console.log(btn.textContent);
+    console.log(playRound(btn.textContent, getComputerChoice()));
+  });
+});
+
+//run playRound when a button is clicked
+//playRound should be input by what button was selected
