@@ -64,8 +64,6 @@ function playRound(humanChoice, computerChoice) {
       );
     }
   }
-
-  // increment humanscore or computerscore variables based on who won that round
 }
 
 // write a function that gets computer getComputerChoice
@@ -110,32 +108,33 @@ function getHumanChoice() {
   return choice;
 }
 
-//Play a full 5 round game
-function playGame() {
-  //make a for loop that calls play round 5 times
+// //Play a full 5 round game
+// function playGame() {
+//   //make a for loop that calls play round 5 times
 
-  //commenting out 5 rounds so we just play one
-  // for (let i = 1; i < 6; i++) {
-  //output the score and result after each round
-  // console.log("------ Round " + i + " -----");
+//   //commenting out 5 rounds so we just play one
+//   // for (let i = 1; i < 6; i++) {
+//   //output the score and result after each round
+//   // console.log("------ Round " + i + " -----");
 
-  //calls the functions each round to get user and computer choice
-  // const humanSelection = getHumanChoice();
-  // const computerSelection = getComputerChoice();
+//   //calls the functions each round to get user and computer choice
+//   // const humanSelection = getHumanChoice();
+//   // const computerSelection = getComputerChoice();
 
-  //calls the play round function each round
-  console.log(playRound(humanSelection, computerSelection));
+//   //calls the play round function each round
+//   console.log(playRound(humanSelection, computerSelection));
 
-  //prints the score of the
-  console.log("Human: " + humanScore + " Computer: " + computerScore);
-  // }
-}
+//   //prints the score of the
+//   console.log("Human: " + humanScore + " Computer: " + computerScore);
+//   // }
+// }
 
 let roundCount = 0;
 
 //Adding JS for all buttons
 const btn = document.querySelectorAll("button");
 const div = document.querySelector("div");
+// const subDiv = document.createElement("div");
 
 //Create event listener for each button
 btn.forEach((btn) => {
@@ -143,14 +142,34 @@ btn.forEach((btn) => {
     console.log(btn.textContent);
     const humanSelection = btn.textContent;
     const computerSelection = getComputerChoice();
+    const subDiv = document.createElement("div");
+    const gameResult = document.createElement("div");
 
     let roundResult = "";
     //run playRound when a button is clicked
     //playRound should be input by what button was selected
     roundResult = playRound(humanSelection, computerSelection);
 
-    const subDiv = document.createElement("div");
     div.appendChild(subDiv);
     subDiv.textContent = roundResult;
+
+    //Set games for 5 rounds
+    if (humanScore >= 5) {
+      //Add div to say human wins
+      div.appendChild(gameResult);
+      gameResult.textContent = "------ Congrats you won this game -----";
+
+      //reset scores
+      humanScore = 0;
+      computerScore = 0;
+    } else if (computerScore >= 5) {
+      //Add div to say computer wins
+      div.appendChild(gameResult);
+      gameResult.textContent = "------ Oh no, the computer won this game -----";
+
+      //reset scores
+      humanScore = 0;
+      computerScore = 0;
+    }
   });
 });
