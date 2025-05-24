@@ -131,8 +131,6 @@ function playGame() {
   // }
 }
 
-// playGame();
-
 let roundCount = 0;
 
 //Adding JS for all buttons
@@ -142,7 +140,6 @@ const div = document.querySelector("div");
 //Create event listener for each button
 btn.forEach((btn) => {
   btn.addEventListener("click", () => {
-    // alert("button clicked");
     console.log(btn.textContent);
     const humanSelection = btn.textContent;
     const computerSelection = getComputerChoice();
@@ -152,20 +149,8 @@ btn.forEach((btn) => {
     //playRound should be input by what button was selected
     roundResult = playRound(humanSelection, computerSelection);
 
-    // div.textContent = `Result:
-    // Human selected: ${humanSelection}
-    // Computer selected: ${computerSelection}
-    // Round result: ${roundResult}`;
-
     const subDiv = document.createElement("div");
-
     div.appendChild(subDiv);
-
-    // subDiv.textContent = `Result:
-    // Human selected: ${humanSelection}
-    // Computer selected: ${computerSelection}
-    // Round result: ${roundResult}`;
-
     subDiv.textContent = roundResult;
   });
 });
